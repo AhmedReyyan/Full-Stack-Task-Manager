@@ -15,7 +15,7 @@ const SideBar = () => {
 
   return ( 
     <>
-      {expanded ? (<div className='h-[100vh] w-[60%] md:w-[23%] lg:w-[20%] text-white bg-black  flex flex-col  items-center justify-between'>
+      {expanded ? (<div className='h-[100vh] w-[60%] md:w-[30%] lg:w-[25%] text-white bg-black  flex flex-col  items-center justify-between'>
         <div className='w-[80%] mt-4 flex flex-col gap-6'>
              <div className='flex justify-between items-center'>
             <h1>Logo</h1>

@@ -36,3 +36,7 @@ li{
   border-radius: 12px;
   transition: .3s;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
