@@ -3,7 +3,7 @@ import { BiMenu } from 'react-icons/bi'
 
 const SideBar = () => {
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const [closing , setClosing] = useState(false)
 
 

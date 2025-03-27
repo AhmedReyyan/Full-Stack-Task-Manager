@@ -58,7 +58,7 @@ const TasksPage = () => {
                  description={item.description} id={item.id}  topic={item.task}  key={index}   date={item.deadLine.date}  time={item.deadLine.time}/>
 
                ))}
-                  <h1  className='text-xl font-bold'>Completed</h1>
+              {filterdCompletedTasks.length>0 &&  <h1  className='text-xl font-bold'>Completed</h1>  }
                   <div className='w-full flex flex-col gap-2'>
                       {filterdCompletedTasks?.map((item,index)=>{
                             console.log(item)
@@ -66,6 +66,7 @@ const TasksPage = () => {
                          return <CompletedTaskCard key={index} topic={item.task} />
                       })}  
                   </div>
+                
            </div>
 
         

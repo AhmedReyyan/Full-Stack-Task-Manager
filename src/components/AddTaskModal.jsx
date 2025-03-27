@@ -27,7 +27,7 @@ const AddTaskModal = () => {
        onSubmit={(e)=>{
                  e.preventDefault()
        }}
-    className='bg-white p-2 flex flex-col items-center w-[90%] h-max rounded-md  absolute justify-between  mt-6 '>
+    className='bg-white p-2 flex flex-col items-center w-[90%]  md:w-[50%] h-max rounded-md  absolute justify-between  mt-6 '>
       <h1 className='text-2xl font-semibold'>Add Task</h1>
 
       <div className='w-full flex flex-col items-center gap-4 mt-6'>
