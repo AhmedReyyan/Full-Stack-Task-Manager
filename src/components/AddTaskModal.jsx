@@ -27,8 +27,8 @@ const AddTaskModal = () => {
        onSubmit={(e)=>{
                  e.preventDefault()
        }}
-    className='bg-white p-4 flex flex-col items-center w-150 h-130 rounded-md  absolute'>
-      <h1>Add Task</h1>
+    className='bg-white p-2 flex flex-col items-center w-[90%] h-max rounded-md  absolute justify-between  mt-6 '>
+      <h1 className='text-2xl font-semibold'>Add Task</h1>
 
       <div className='w-full flex flex-col items-center gap-4 mt-6'>
       <div className='w-[90%]   gap-2'>
@@ -51,7 +51,7 @@ const AddTaskModal = () => {
       </div>
       <div className='w-[90%]   gap-2'>
         <h1 className='ml-2'>Dead Line</h1>
-        <div className='flex gap-3'>
+        <div className='flex  flex-col md:flex-row gap-3'>
 
       <input  
           value={taskData.deadLine.date}
@@ -70,6 +70,13 @@ const AddTaskModal = () => {
       </div>
       
 
+      </div>
+      <div className='w-full  p-4  ml-2 '>
+        <select name="priority" id="priority">
+          <option value="1">Priority 1</option>
+          <option value="2  ">Priority 2</option>
+          <option value="3">Priority 3</option>
+        </select>
       </div>
 <div className='absolute bottom-4 right-2 '>
       <Button  onClick={

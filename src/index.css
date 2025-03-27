@@ -5,3 +5,39 @@
 .no-scrollbar::-webkit-scrollbar{
     display: none;
 }
+
+
+.animateShowingUp{
+    transition: 2s;
+   
+    animation: showingup 1s ease-in-out;
+}
+
+.animateShowingDown{
+    transition: 2s;
+   
+    animation: showingdown 1s ease-in-out;
+}
+
+@keyframes showingup {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes showingdown {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-100%);
+    }
+}
+
+

@@ -43,7 +43,7 @@ const TasksPage = () => {
 
         <div className=' w-[95%] h-full     mt-5  '>
            {/* <h1>Pending</h1> */}
-          <div className='w-[50%]  h-max flex flex-col gap-2   overflow-scroll no-scrollbar'>
+          <div className='w-full  md:w-[50%]  h-max flex flex-col gap-2   overflow-scroll no-scrollbar'>
                {filteredPendingTasks?.map((item , index)=>(
                 // <div className='w-[95%] h-max bg-white  p-2'>
                 //   {item.description}
