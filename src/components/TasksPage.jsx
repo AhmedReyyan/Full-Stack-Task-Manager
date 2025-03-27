@@ -25,7 +25,7 @@ const TasksPage = () => {
 
 
   return (
-    <div  className='w-full bg-gray-700 h-full flex flex-col items-center relative'>
+    <div  className='w-full  h-full flex flex-col items-center relative'>
          <div className=' mt-4 w-[95%] flex justify-between'>
             <h1 className='text-3xl font-semibold'>Tasks</h1>
             <Button onClick={()=>{
@@ -55,7 +55,7 @@ const TasksPage = () => {
                     
                 //     Dispatch(completed(index))
                 // }}  
-                 description={item.description} id={item.id}  topic={item.task}  key={index}   date={item.deadLine.date}  time={item.deadLine.time}/>
+                 description={item.description.length>60?item.description.slice(0,55) + ". . . ." :item.description} id={item.id}  topic={item.task}  key={index}   date={item.deadLine.date}  time={item.deadLine.time}/>
 
                ))}
               {filterdCompletedTasks.length>0 &&  <h1  className='text-xl font-bold'>Completed</h1>  }

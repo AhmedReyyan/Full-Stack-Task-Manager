@@ -4,7 +4,7 @@ import TasksPage from './components/TasksPage'
 
 const App = () => {
   return (
-    <div className='w-full h-[100vh] bg-lime-200 flex'>
+    <div className='w-full h-[100vh] flex'>
       <SideBar/>
       <TasksPage />
     </div>

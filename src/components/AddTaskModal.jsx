@@ -27,7 +27,7 @@ const AddTaskModal = () => {
        onSubmit={(e)=>{
                  e.preventDefault()
        }}
-    className='bg-white p-2 flex flex-col items-center w-[90%]  md:w-[50%] h-max rounded-md  absolute justify-between  mt-6 '>
+    className=' p-2 flex flex-col items-center w-[90%] text-white  md:w-[50%]  bg-black  h-max rounded-md  absolute justify-between  mt-6 '>
       <h1 className='text-2xl font-semibold'>Add Task</h1>
 
       <div className='w-full flex flex-col items-center gap-4 mt-6'>
@@ -37,7 +37,7 @@ const AddTaskModal = () => {
         onChange={(e)=>{
               setTaskData({...taskData , task : e.target.value})
         }}
-      className='bg-gray-200 w-full p-2 rounded-xl border-2 ' type="text" />
+      className='bg-gray-200   text-black w-full p-2 rounded-xl border-2 ' type="text" />
       </div>
       <div className='w-[90%]   gap-2'>
         <h1 className='ml-2'>Description</h1>
@@ -47,7 +47,7 @@ const AddTaskModal = () => {
       onChange={(e)=>{
         setTaskData({...taskData , description : e.target.value})
   }}
-      className='bg-gray-200 w-full h-30 p-2 rounded-xl border-2  resize-none' name="" placeholder='Enter the Description . . . ' />
+      className='bg-gray-200 text-black w-full h-30 p-2 rounded-xl border-2  resize-none' name="" placeholder='Enter the Description . . . ' />
       </div>
       <div className='w-[90%]   gap-2'>
         <h1 className='ml-2'>Dead Line</h1>
@@ -58,13 +58,13 @@ const AddTaskModal = () => {
           onChange={(e)=>{
             setTaskData({...taskData , deadLine : {...taskData.deadLine , date : e.target.value}})
       }}
-      className='bg-gray-200 w-full p-2 rounded-xl border-2 ' type="date" />
+      className='bg-gray-200  text-black w-full p-2 rounded-xl border-2 ' type="date" />
       <input 
          value={taskData.deadLine.time}
          onChange={(e)=>{
           setTaskData({...taskData , deadLine : {...taskData.deadLine , time : e.target.value}})
     }}
-      className='bg-gray-200 w-full p-2 rounded-xl border-2 ' type="time" />
+      className='bg-gray-200  text-black w-full p-2 rounded-xl border-2 ' type="time" />
         </div>
       {/* <textarea className='bg-gray-200 w-full h-30 p-2 rounded-xl border-2  resize-none' name="" id="">Hello</textarea> */}
       </div>
@@ -73,12 +73,12 @@ const AddTaskModal = () => {
       </div>
       <div className='w-full  p-4  ml-2 '>
         <select name="priority" id="priority">
-          <option value="1">Priority 1</option>
+          <option className='bg-black' value="1">Priority 1</option>
           <option value="2  ">Priority 2</option>
           <option value="3">Priority 3</option>
         </select>
       </div>
-<div className='absolute bottom-4 right-2 '>
+<div className='absolute bottom-4 right-2  text-black '>
       <Button  onClick={
         ()=>{
           console.log(taskData);
