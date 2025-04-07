@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Button from './Button'
-import { open , close ,addTask , removeTask} from '../context/data'
+import { open , close ,addTask ,  removeTask} from '../context/data'
 import { useDispatch , useSelector} from 'react-redux'
 
 
 const AddTaskModal = () => {
 
-
+   const modalValue = useSelector(state => state.addTaskModal.value)
   const idSetter = useSelector(state => state.taskList.value.length)
   console.log(idSetter);
   
@@ -20,6 +20,9 @@ const AddTaskModal = () => {
     status: 'pending',
     id:idSetter
   }) 
+
+
+ 
  const Dispatch = useDispatch()
 
   return (
@@ -28,6 +31,11 @@ const AddTaskModal = () => {
                  e.preventDefault()
        }}
     className=' p-2 flex flex-col items-center w-[90%] text-white  md:w-[50%]  bg-black  h-max rounded-md  absolute justify-between  mt-6 '>
+        <button  className='absolute right-6 text-2xl'
+          onClick={()=>{
+            modalValue && Dispatch(close())
+          }}
+        >X</button>
       <h1 className='text-2xl font-semibold'>Add Task</h1>
 
       <div className='w-full flex flex-col items-center gap-4 mt-6'>
@@ -67,7 +75,7 @@ const AddTaskModal = () => {
       className='bg-gray-200  text-black w-full p-2 rounded-xl border-2 ' type="time" />
         </div>
       {/* <textarea className='bg-gray-200 w-full h-30 p-2 rounded-xl border-2  resize-none' name="" id="">Hello</textarea> */}
-      </div>
+      </div> 
       
 
       </div>

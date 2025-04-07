@@ -45,16 +45,9 @@ const TasksPage = () => {
            {/* <h1>Pending</h1> */}
           <div className='w-full  md:w-[50%]  h-max flex flex-col gap-2   overflow-scroll no-scrollbar'>
                {filteredPendingTasks?.map((item , index)=>(
-                // <div className='w-[95%] h-max bg-white  p-2'>
-                //   {item.description}
-                // </div>
+                
                 <TaskCard 
-                //   onClick={()=>{
-                //     console.log(index);
-                //     console.log(item);
-                    
-                //     Dispatch(completed(index))
-                // }}  
+                
                  description={item.description.length>60?item.description.slice(0,55) + ". . . ." :item.description} id={item.id}  topic={item.task}  key={index}   date={item.deadLine.date}  time={item.deadLine.time}/>
 
                ))}

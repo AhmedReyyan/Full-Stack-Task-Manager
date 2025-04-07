@@ -9,8 +9,9 @@ export const addtaskmodal= createSlice({
 
     reducers:{
         open: (state) => { state.value = true },
-        close: (state) => { state.value = false }
-    }
+        close: (state) => { state.value = false },
+       
+    },
 })
 export const     tasksList = createSlice({
     name : 'taskList',
@@ -25,6 +26,12 @@ export const     tasksList = createSlice({
         
     }
 })
+
+// export const edittask = createSlice({
+//     initialState:{
+//         value: {}
+//     }
+// })
 
 
 export const {addTask , removeTask,completed} =  tasksList.actions

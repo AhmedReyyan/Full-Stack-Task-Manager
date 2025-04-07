@@ -3,6 +3,8 @@ import { BiEdit } from 'react-icons/bi'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { completed } from '../context/data'
+import { open } from '../context/data'
+import { useSelector } from 'react-redux'
 
 const TaskCard = (props) => {
    
@@ -25,7 +27,13 @@ const TaskCard = (props) => {
         <p   className='text-gray-500'>{description}</p>
       </div>
       <div className='flex gap-2'>
-        <button><BiEdit  size={24}/></button>
+        <button 
+            onClick={()=>{
+              Dispatch(open())
+             
+            }}
+        
+        ><BiEdit  size={24}/></button>
         <button><MdDelete  size={24}/></button>
       </div>
       </div>
