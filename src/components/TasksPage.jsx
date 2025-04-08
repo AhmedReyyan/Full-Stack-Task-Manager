@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AddTaskModal from './AddTaskModal'
 import Button from './Button'
 import { useDispatch, useSelector } from 'react-redux'
-import { open , close , completed } from '../context/data'
+import { open , close , completed, addnewtask } from '../context/data'
 import TaskCard from './TaskCard'
 import CompletedTaskCard from './CompletedTaskCard'
 
@@ -30,7 +30,8 @@ const TasksPage = () => {
             <h1 className='text-3xl font-semibold'>Tasks</h1>
             <Button onClick={()=>{
                 Dispatch(open())
-                console.log(modalvalue);
+                Dispatch(addnewtask())
+                // console.log(modalvalue);
                 
             }} text={'New Task'} /> 
          </div>
@@ -48,13 +49,13 @@ const TasksPage = () => {
                 
                 <TaskCard 
                 
-                 description={item.description.length>60?item.description.slice(0,55) + ". . . ." :item.description} id={item.id}  topic={item.task}  key={index}   date={item.deadLine.date}  time={item.deadLine.time}/>
+                 description={item.description.length>60?item.description.slice(0,30) + ". . . ." :item.description} id={item.id}  topic={item.task.length>40?item.task.slice(0,23)  :item.task}  key={index}   date={item.deadLine.date}  time={item.deadLine.time}/>
 
                ))}
               {filterdCompletedTasks.length>0 &&  <h1  className='text-xl font-bold'>Completed</h1>  }
                   <div className='w-full flex flex-col gap-2'>
                       {filterdCompletedTasks?.map((item,index)=>{
-                            console.log(item)
+                            // console.log(item)
                         
                          return <CompletedTaskCard key={index} topic={item.task} />
                       })}  

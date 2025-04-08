@@ -3,7 +3,7 @@ import { BiEdit } from 'react-icons/bi'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { completed } from '../context/data'
-import { open } from '../context/data'
+import { open ,addnewtask,editTask,settask} from '../context/data'
 import { useSelector } from 'react-redux'
 
 const TaskCard = (props) => {
@@ -29,7 +29,12 @@ const TaskCard = (props) => {
       <div className='flex gap-2'>
         <button 
             onClick={()=>{
+              Dispatch(editTask())
               Dispatch(open())
+              // console.log(id);
+              Dispatch(settask(id))
+              
+              
              
             }}
         
