@@ -30,6 +30,16 @@ export const tasksList = createSlice({
                 state.value[index] = task;
             }
         },
+        deleteTask : (state, action) =>{
+
+            
+              state.value.map(item =>{
+                       if (item.id == action.payload){
+                           item.status = 'deleted'
+                       }
+              })
+              state.value = state.value.filter((item)=> item.status != 'deleted')
+        }
     }
 })
 
@@ -59,6 +69,17 @@ const tasktobeedited = createSlice({
     }
 })
 
+// const deletetask = createSlice({
+//     name : 'deletetask',
+//     initialState:{
+//         value : "",
+//     },
+//     reducers:{
+//         delete : (state , action) => {state.value = action.payload},
+       
+//     }
+// })
+
 // export const edittask = createSlice({
 //     initialState:{
 //         value: {}
@@ -70,7 +91,7 @@ export const  {settask ,clearTask} = tasktobeedited.actions
 export const     setTaskForEdit = tasktobeedited.reducer
 
 
-export const {addTask , removeTask,completed,replace} =  tasksList.actions
+export const {addTask , removeTask,completed,replace , deleteTask} =  tasksList.actions
 export const tasklist =  tasksList.reducer
 
 

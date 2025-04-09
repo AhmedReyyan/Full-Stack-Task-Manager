@@ -3,7 +3,7 @@ import { BiEdit } from 'react-icons/bi'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { completed } from '../context/data'
-import { open ,addnewtask,editTask,settask} from '../context/data'
+import { open ,addnewtask,editTask,settask , deleteTask} from '../context/data'
 import { useSelector } from 'react-redux'
 
 const TaskCard = (props) => {
@@ -39,7 +39,11 @@ const TaskCard = (props) => {
             }}
         
         ><BiEdit  size={24}/></button>
-        <button><MdDelete  size={24}/></button>
+        <button
+             onClick={()=>{
+              Dispatch(deleteTask(id))
+             }}
+        ><MdDelete  size={24}/></button>
       </div>
       </div>
       <div  className='w-full   flex justify-between'>
